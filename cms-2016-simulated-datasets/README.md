@@ -50,13 +50,17 @@ This requires the data files to be placed in their final location. However, for
 early testing on LXPLUS, all steps can be run without the EOS file index cache
 by means of adding the command-line option `--ignore-eos-store` to the commands below.
 
+You can specify the number of threads to use in these commands by adding the --threads option.
+The thread number option can be specified for these options: 
+`--create-das-json-store`, `--create-mcm-store`, `--create-records`, `--lhe-generators`
+
 We can now build sample records by doing:
 
 ```console
 $ python3 ./code/interface.py --create-das-json-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 
 $ auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store --threads 100 inputs/CMS-2016-mc-datasets.txt
 
 $ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 
