@@ -348,7 +348,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     year_created = '2017'
     year_published = '2024'
-    run_period = ['Run2017G', 'Run2017H']
+    run_period = ['Run2017B', 'Run2017C','Run2017D', 'Run2017E','Run2017F']
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 
